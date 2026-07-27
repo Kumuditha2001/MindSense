@@ -1,11 +1,10 @@
 pandas
 numpy
 matplotlib
-seaborn
 scikit-learn
-tensorflow
-keras
 statsmodels
+tensorflow
+ipykernel
+
 fastapi
-uvicorn
-jupyter
+uvicorn[standard]

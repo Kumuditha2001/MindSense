@@ -1,27 +1,23 @@
-# Python virtual environment
+# Virtual environment
 venv/
+.venv/
 
-# Python cache
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
 
 # Jupyter
 .ipynb_checkpoints/
 
-# Large generated data
-data/processed/
-data/sequences/
+# VS Code
+.vscode/
 
-# Training outputs
-artifacts/
-results/
-graphs/
-
-# Model files (optional)
+# Model files
 *.h5
 *.keras
-*.pkl
 *.joblib
+*.pkl
 
 # OS files
 .DS_Store
+Thumbs.db
