@@ -1,0 +1,12 @@
+pandas
+numpy
+matplotlib
+scikit-learn
+statsmodels
+tensorflow
+ipykernel
+
+fastapi
+uvicorn[standard]
+email-validator
+requests
