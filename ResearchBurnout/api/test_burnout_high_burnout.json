@@ -1,0 +1,26 @@
+{
+  "user_id": "user_burnout_high_01",
+  "features": {
+    "nwave": 3,
+    "longipart": 1,
+    "age": 27,
+    "sex": "Male",
+    "year": 2024,
+    "bmi": 27.8,
+    "physact": 1,
+    "health": 2,
+    "psyt": 3,
+    "cop_e": 1,
+    "cop_p": 1,
+    "cop_h": 1,
+    "fmale": 0,
+    "part": 1,
+    "socsup": 1,
+    "educ_par": 2,
+    "jobhours": 62,
+    "cesd": 24,
+    "bdi_su": 1,
+    "stai": 55,
+    "stress": 8
+  }
+}

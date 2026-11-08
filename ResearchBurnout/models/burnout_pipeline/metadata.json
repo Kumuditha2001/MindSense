@@ -1,0 +1,62 @@
+{
+  "data_path": "data_with_burnout.csv",
+  "feature_columns": [
+    "nwave",
+    "longipart",
+    "age",
+    "sex",
+    "year",
+    "bmi",
+    "physact",
+    "health",
+    "psyt",
+    "cop_e",
+    "cop_p",
+    "cop_h",
+    "fmale",
+    "part",
+    "socsup",
+    "educ_par",
+    "jobhours",
+    "cesd",
+    "bdi_su",
+    "stai",
+    "stress"
+  ],
+  "num_cols": [
+    "age",
+    "bmi",
+    "physact",
+    "health",
+    "psyt",
+    "cop_e",
+    "cop_p",
+    "cop_h",
+    "part",
+    "socsup",
+    "jobhours",
+    "cesd",
+    "bdi_su",
+    "stai",
+    "stress"
+  ],
+  "cat_cols": [
+    "nwave",
+    "longipart",
+    "year",
+    "educ_par",
+    "fmale",
+    "sex"
+  ],
+  "constant_cols_dropped": [],
+  "leakage_columns_removed": [
+    "mbi_ex",
+    "mbi_cy",
+    "mbi_ea",
+    "burnout_level",
+    "burnout_level_norm"
+  ],
+  "random_seed": 42,
+  "use_smote": true,
+  "chosen_threshold": 0.55
+}

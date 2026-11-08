@@ -1,0 +1,19 @@
+# Core API & Storage
+fastapi
+uvicorn[standard]
+pydantic
+email-validator
+requests
+
+# Data Processing & ML
+numpy
+pandas
+scikit-learn
+joblib
+
+# Burnout Classification Models
+lightgbm
+torch
+transformers
+sentence-transformers
+
