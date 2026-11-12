@@ -1,0 +1,161 @@
+{
+  "api_name": "AI Mental Health Prediction API",
+  "api_version": "1.0.0",
+  "base_url": "http://localhost:8000",
+  "endpoints": [
+    {
+      "name": "Text Prediction",
+      "method": "POST",
+      "path": "/predict/text",
+      "full_url": "http://localhost:8000/predict/text",
+      "description": "Predicts burnout based on reflective journal text",
+      "request_schema": {
+        "user_id": "string",
+        "text": "string"
+      },
+      "response_schema": {
+        "user_id": "string",
+        "prediction_label": "integer (0=low, 1=high)",
+        "probabilities": "array of floats"
+      },
+      "test_data_file": "test_text_high_burnout.json",
+      "test_data_file_low": "test_text_low_burnout.json"
+    },
+    {
+      "name": "Behavior Prediction",
+      "method": "POST",
+      "path": "/predict/behavior",
+      "full_url": "http://localhost:8000/predict/behavior",
+      "description": "Predicts burnout based on behavioral features (sleep, stress, exercise, mental health scores, etc.)",
+      "request_schema": {
+        "user_id": "string",
+        "features": {
+          "Age": "number",
+          "Sleep_Hours": "number",
+          "Screen_Time": "number",
+          "Stress_Level": "number",
+          "Noise_Exposure": "number",
+          "Social_Interaction": "number",
+          "Work_Hours": "number",
+          "Exercise_Hours": "number",
+          "Caffeine_Intake": "number",
+          "Multitasking_Habit": "number",
+          "Anxiety_Score": "number",
+          "Depression_Score": "number",
+          "Sensory_Sensitivity": "number",
+          "Meditation_Habit": "number",
+          "Overthinking_Score": "number",
+          "Irritability_Score": "number",
+          "Headache_Frequency": "number",
+          "Sleep_Quality": "number",
+          "Tech_Usage_Hours": "number",
+          "Overstimulated": "number",
+          "Heart_Rate": "number"
+        }
+      },
+      "response_schema": {
+        "user_id": "string",
+        "prediction": "integer (0=low, 1=high)",
+        "probability_high_burnout": "float (0.0-1.0)",
+        "metadata": "object"
+      },
+      "test_data_file": "test_behavior_high_burnout.json",
+      "test_data_file_low": "test_behavior_low_burnout.json"
+    },
+    {
+      "name": "Burnout Questionnaire Prediction",
+      "method": "POST",
+      "path": "/predict/burnout",
+      "full_url": "http://localhost:8000/predict/burnout",
+      "description": "Predicts burnout based on questionnaire features (BMI, work hours, stress scores, coping mechanisms, etc.)",
+      "request_schema": {
+        "user_id": "string",
+        "features": {
+          "nwave": "integer",
+          "longipart": "integer",
+          "age": "integer",
+          "sex": "string",
+          "year": "integer",
+          "bmi": "number",
+          "physact": "integer",
+          "health": "integer",
+          "psyt": "integer",
+          "cop_e": "integer",
+          "cop_p": "integer",
+          "cop_h": "integer",
+          "fmale": "integer",
+          "part": "integer",
+          "socsup": "integer",
+          "educ_par": "integer",
+          "jobhours": "integer",
+          "cesd": "integer",
+          "bdi_su": "integer",
+          "stai": "integer",
+          "stress": "integer"
+        }
+      },
+      "response_schema": {
+        "user_id": "string",
+        "prediction": "integer (0=low, 1=high)",
+        "probability": "float (0.0-1.0)",
+        "threshold_used": "float"
+      },
+      "test_data_file": "test_burnout_high_burnout.json",
+      "test_data_file_low": "test_burnout_low_burnout.json"
+    },
+    {
+      "name": "Debug Status",
+      "method": "GET",
+      "path": "/debug/status",
+      "full_url": "http://localhost:8000/debug/status",
+      "description": "Returns the status of all loaded models",
+      "request_schema": null,
+      "response_schema": {
+        "text_model_loaded": "boolean",
+        "behavior_model_loaded": "boolean",
+        "burnout_pipeline_loaded": "boolean",
+        "burnout_threshold": "float",
+        "behavior_metadata": "object"
+      }
+    },
+    {
+      "name": "Home",
+      "method": "GET",
+      "path": "/",
+      "full_url": "http://localhost:8000/",
+      "description": "API root endpoint - returns welcome message",
+      "request_schema": null,
+      "response_schema": {
+        "message": "string"
+      }
+    }
+  ],
+  "curl_examples": {
+    "text_high_burnout": "curl -X POST \"http://localhost:8000/predict/text\" -H \"Content-Type: application/json\" -d @test_data/test_text_high_burnout.json",
+    "text_low_burnout": "curl -X POST \"http://localhost:8000/predict/text\" -H \"Content-Type: application/json\" -d @test_data/test_text_low_burnout.json",
+    "behavior_high_burnout": "curl -X POST \"http://localhost:8000/predict/behavior\" -H \"Content-Type: application/json\" -d @test_data/test_behavior_high_burnout.json",
+    "behavior_low_burnout": "curl -X POST \"http://localhost:8000/predict/behavior\" -H \"Content-Type: application/json\" -d @test_data/test_behavior_low_burnout.json",
+    "burnout_high_burnout": "curl -X POST \"http://localhost:8000/predict/burnout\" -H \"Content-Type: application/json\" -d @test_data/test_burnout_high_burnout.json",
+    "burnout_low_burnout": "curl -X POST \"http://localhost:8000/predict/burnout\" -H \"Content-Type: application/json\" -d @test_data/test_burnout_low_burnout.json",
+    "debug_status": "curl -X GET \"http://localhost:8000/debug/status\"",
+    "home": "curl -X GET \"http://localhost:8000/\""
+  },
+  "models_info": {
+    "text_model": {
+      "type": "Transformer-based sequence classification",
+      "location": "burnout_text_classifier_ft",
+      "task": "Burnout classification from text"
+    },
+    "behavior_model": {
+      "type": "Behavioral features classifier",
+      "location": "Data/model_artifacts/behavior_model_synthetic_labels.joblib",
+      "task": "Burnout prediction from behavioral features"
+    },
+    "burnout_pipeline": {
+      "type": "Questionnaire-based classifier pipeline",
+      "location": "saved_models_binary_high_v2_all/pipeline_with_preproc.pkl",
+      "threshold_location": "saved_models_binary_high_v2_all/decision_threshold.pkl",
+      "task": "Burnout prediction from questionnaire responses"
+    }
+  }
+}

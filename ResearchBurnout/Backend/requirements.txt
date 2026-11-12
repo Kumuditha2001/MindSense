@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+joblib
+pandas
+scikit-learn
+vaderSentiment
+# optionally, if using transformers & sentence-transformers:
+transformers
+sentence-transformers
+torch
+shap
+lightgbm

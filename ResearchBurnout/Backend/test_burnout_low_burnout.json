@@ -1,0 +1,26 @@
+{
+  "user_id": "user_burnout_low_01",
+  "features": {
+    "nwave": 3,
+    "longipart": 1,
+    "age": 23,
+    "sex": "Female",
+    "year": 2024,
+    "bmi": 22.5,
+    "physact": 4,
+    "health": 4,
+    "psyt": 1,
+    "cop_e": 4,
+    "cop_p": 4,
+    "cop_h": 4,
+    "fmale": 1,
+    "part": 1,
+    "socsup": 4,
+    "educ_par": 3,
+    "jobhours": 35,
+    "cesd": 5,
+    "bdi_su": 0,
+    "stai": 25,
+    "stress": 2
+  }
+}

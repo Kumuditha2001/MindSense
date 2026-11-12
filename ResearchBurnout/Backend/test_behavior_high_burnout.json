@@ -1,0 +1,26 @@
+{
+  "user_id": "user_behavior_high_01",
+  "features": {
+    "Age": 22,
+    "Sleep_Hours": 5.5,
+    "Screen_Time": 8,
+    "Stress_Level": 7,
+    "Noise_Exposure": 6,
+    "Social_Interaction": 3,
+    "Work_Hours": 20,
+    "Exercise_Hours": 1,
+    "Caffeine_Intake": 3,
+    "Multitasking_Habit": 1,
+    "Anxiety_Score": 7,
+    "Depression_Score": 6,
+    "Sensory_Sensitivity": 5,
+    "Meditation_Habit": 0,
+    "Overthinking_Score": 8,
+    "Irritability_Score": 6,
+    "Headache_Frequency": 4,
+    "Sleep_Quality": 2,
+    "Tech_Usage_Hours": 9,
+    "Overstimulated": 1,
+    "Heart_Rate": 82
+  }
+}
